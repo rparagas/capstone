@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		A62E9EB01F440004002CD22E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E9EAF1F440004002CD22E /* AppDelegate.swift */; };
-		A62E9EB21F440004002CD22E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E9EB11F440004002CD22E /* ViewController.swift */; };
+		A62E9EB21F440004002CD22E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E9EB11F440004002CD22E /* LoginViewController.swift */; };
 		A62E9EB51F440004002CD22E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A62E9EB31F440004002CD22E /* Main.storyboard */; };
 		A62E9EB71F440004002CD22E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A62E9EB61F440004002CD22E /* Assets.xcassets */; };
 		A62E9EBA1F440004002CD22E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A62E9EB81F440004002CD22E /* LaunchScreen.storyboard */; };
+		A62E9EC21F4400DF002CD22E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A62E9EC11F4400DF002CD22E /* GoogleService-Info.plist */; };
+		F1339186E3F76D3442C4F2A7 /* Pods_Multiple_Choice_Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E73DC6785847BA3CEE64C470 /* Pods_Multiple_Choice_Engine.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		472E46A9C956240A18F8D3BC /* Pods-Multiple Choice Engine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multiple Choice Engine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Multiple Choice Engine/Pods-Multiple Choice Engine.release.xcconfig"; sourceTree = "<group>"; };
+		552E771627FA3C329D5A3B86 /* Pods-Multiple Choice Engine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Multiple Choice Engine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Multiple Choice Engine/Pods-Multiple Choice Engine.debug.xcconfig"; sourceTree = "<group>"; };
 		A62E9EAC1F440004002CD22E /* Multiple Choice Engine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multiple Choice Engine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62E9EAF1F440004002CD22E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A62E9EB11F440004002CD22E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A62E9EB11F440004002CD22E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A62E9EB41F440004002CD22E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A62E9EB61F440004002CD22E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A62E9EB91F440004002CD22E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A62E9EBB1F440004002CD22E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A62E9EC11F4400DF002CD22E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E73DC6785847BA3CEE64C470 /* Pods_Multiple_Choice_Engine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Multiple_Choice_Engine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1339186E3F76D3442C4F2A7 /* Pods_Multiple_Choice_Engine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				A62E9EAE1F440004002CD22E /* Multiple Choice Engine */,
 				A62E9EAD1F440004002CD22E /* Products */,
+				A91035D4EDA1E30168A186AB /* Pods */,
+				F1E1D9DEF2EC8AC6014D5294 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +63,56 @@
 		A62E9EAE1F440004002CD22E /* Multiple Choice Engine */ = {
 			isa = PBXGroup;
 			children = (
+				A62E9EC41F440388002CD22E /* Model */,
+				A62E9EC51F44038D002CD22E /* View */,
+				A62E9EC31F44037E002CD22E /* Controller */,
 				A62E9EAF1F440004002CD22E /* AppDelegate.swift */,
-				A62E9EB11F440004002CD22E /* ViewController.swift */,
 				A62E9EB31F440004002CD22E /* Main.storyboard */,
 				A62E9EB61F440004002CD22E /* Assets.xcassets */,
 				A62E9EB81F440004002CD22E /* LaunchScreen.storyboard */,
 				A62E9EBB1F440004002CD22E /* Info.plist */,
+				A62E9EC11F4400DF002CD22E /* GoogleService-Info.plist */,
 			);
 			path = "Multiple Choice Engine";
+			sourceTree = "<group>";
+		};
+		A62E9EC31F44037E002CD22E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A62E9EB11F440004002CD22E /* LoginViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A62E9EC41F440388002CD22E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A62E9EC51F44038D002CD22E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A91035D4EDA1E30168A186AB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				552E771627FA3C329D5A3B86 /* Pods-Multiple Choice Engine.debug.xcconfig */,
+				472E46A9C956240A18F8D3BC /* Pods-Multiple Choice Engine.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F1E1D9DEF2EC8AC6014D5294 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E73DC6785847BA3CEE64C470 /* Pods_Multiple_Choice_Engine.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +122,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A62E9EBE1F440004002CD22E /* Build configuration list for PBXNativeTarget "Multiple Choice Engine" */;
 			buildPhases = (
+				D2BFE9C9F17F22A0A03057F6 /* [CP] Check Pods Manifest.lock */,
 				A62E9EA81F440004002CD22E /* Sources */,
 				A62E9EA91F440004002CD22E /* Frameworks */,
 				A62E9EAA1F440004002CD22E /* Resources */,
+				3FF11D4B96771DE408EF2DEB /* [CP] Embed Pods Frameworks */,
+				4FA39257C38D7A24CE1AA441 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A62E9EBA1F440004002CD22E /* LaunchScreen.storyboard in Resources */,
+				A62E9EC21F4400DF002CD22E /* GoogleService-Info.plist in Resources */,
 				A62E9EB71F440004002CD22E /* Assets.xcassets in Resources */,
 				A62E9EB51F440004002CD22E /* Main.storyboard in Resources */,
 			);
@@ -132,12 +187,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3FF11D4B96771DE408EF2DEB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Multiple Choice Engine/Pods-Multiple Choice Engine-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4FA39257C38D7A24CE1AA441 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Multiple Choice Engine/Pods-Multiple Choice Engine-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2BFE9C9F17F22A0A03057F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A62E9EA81F440004002CD22E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A62E9EB21F440004002CD22E /* ViewController.swift in Sources */,
+				A62E9EB21F440004002CD22E /* LoginViewController.swift in Sources */,
 				A62E9EB01F440004002CD22E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +364,7 @@
 		};
 		A62E9EBF1F440004002CD22E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 552E771627FA3C329D5A3B86 /* Pods-Multiple Choice Engine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HKAVBPG58A;
@@ -274,6 +378,7 @@
 		};
 		A62E9EC01F440004002CD22E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 472E46A9C956240A18F8D3BC /* Pods-Multiple Choice Engine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HKAVBPG58A;
@@ -304,6 +409,7 @@
 				A62E9EC01F440004002CD22E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
