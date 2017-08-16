@@ -6,7 +6,8 @@ target 'Multiple Choice Engine' do
   use_frameworks!
 
   # Pods for Multiple Choice Engine
-  pod ‘Firebase/Core’
-  pod ‘Firebase/Auth’
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
 end

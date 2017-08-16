@@ -12,7 +12,13 @@
 		A62E9EB51F440004002CD22E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A62E9EB31F440004002CD22E /* Main.storyboard */; };
 		A62E9EB71F440004002CD22E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A62E9EB61F440004002CD22E /* Assets.xcassets */; };
 		A62E9EBA1F440004002CD22E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A62E9EB81F440004002CD22E /* LaunchScreen.storyboard */; };
-		A62E9EC21F4400DF002CD22E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A62E9EC11F4400DF002CD22E /* GoogleService-Info.plist */; };
+		A62E9EE71F440F3B002CD22E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A62E9EE61F440F3B002CD22E /* GoogleService-Info.plist */; };
+		A62E9EE91F447B35002CD22E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E9EE81F447B35002CD22E /* HomeViewController.swift */; };
+		A62E9EEB1F447BB8002CD22E /* NewChallengeTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E9EEA1F447BB8002CD22E /* NewChallengeTopicViewController.swift */; };
+		A62E9EED1F447EB9002CD22E /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E9EEC1F447EB9002CD22E /* Topic.swift */; };
+		A62E9EEF1F447F94002CD22E /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E9EEE1F447F94002CD22E /* Question.swift */; };
+		A62E9EF11F448E0C002CD22E /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E9EF01F448E0C002CD22E /* Student.swift */; };
+		A62E9EF31F4492F4002CD22E /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E9EF21F4492F4002CD22E /* UserClass.swift */; };
 		F1339186E3F76D3442C4F2A7 /* Pods_Multiple_Choice_Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E73DC6785847BA3CEE64C470 /* Pods_Multiple_Choice_Engine.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +32,13 @@
 		A62E9EB61F440004002CD22E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A62E9EB91F440004002CD22E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A62E9EBB1F440004002CD22E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A62E9EC11F4400DF002CD22E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A62E9EE61F440F3B002CD22E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A62E9EE81F447B35002CD22E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A62E9EEA1F447BB8002CD22E /* NewChallengeTopicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChallengeTopicViewController.swift; sourceTree = "<group>"; };
+		A62E9EEC1F447EB9002CD22E /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		A62E9EEE1F447F94002CD22E /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		A62E9EF01F448E0C002CD22E /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		A62E9EF21F4492F4002CD22E /* UserClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
 		E73DC6785847BA3CEE64C470 /* Pods_Multiple_Choice_Engine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Multiple_Choice_Engine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,7 +83,7 @@
 				A62E9EB61F440004002CD22E /* Assets.xcassets */,
 				A62E9EB81F440004002CD22E /* LaunchScreen.storyboard */,
 				A62E9EBB1F440004002CD22E /* Info.plist */,
-				A62E9EC11F4400DF002CD22E /* GoogleService-Info.plist */,
+				A62E9EE61F440F3B002CD22E /* GoogleService-Info.plist */,
 			);
 			path = "Multiple Choice Engine";
 			sourceTree = "<group>";
@@ -80,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				A62E9EB11F440004002CD22E /* LoginViewController.swift */,
+				A62E9EE81F447B35002CD22E /* HomeViewController.swift */,
+				A62E9EEA1F447BB8002CD22E /* NewChallengeTopicViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -87,6 +101,10 @@
 		A62E9EC41F440388002CD22E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A62E9EEC1F447EB9002CD22E /* Topic.swift */,
+				A62E9EEE1F447F94002CD22E /* Question.swift */,
+				A62E9EF01F448E0C002CD22E /* Student.swift */,
+				A62E9EF21F4492F4002CD22E /* UserClass.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -179,8 +197,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A62E9EBA1F440004002CD22E /* LaunchScreen.storyboard in Resources */,
-				A62E9EC21F4400DF002CD22E /* GoogleService-Info.plist in Resources */,
 				A62E9EB71F440004002CD22E /* Assets.xcassets in Resources */,
+				A62E9EE71F440F3B002CD22E /* GoogleService-Info.plist in Resources */,
 				A62E9EB51F440004002CD22E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,7 +259,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A62E9EB21F440004002CD22E /* LoginViewController.swift in Sources */,
+				A62E9EED1F447EB9002CD22E /* Topic.swift in Sources */,
 				A62E9EB01F440004002CD22E /* AppDelegate.swift in Sources */,
+				A62E9EEF1F447F94002CD22E /* Question.swift in Sources */,
+				A62E9EEB1F447BB8002CD22E /* NewChallengeTopicViewController.swift in Sources */,
+				A62E9EF11F448E0C002CD22E /* Student.swift in Sources */,
+				A62E9EE91F447B35002CD22E /* HomeViewController.swift in Sources */,
+				A62E9EF31F4492F4002CD22E /* UserClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,8 +393,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HKAVBPG58A;
 				INFOPLIST_FILE = "Multiple Choice Engine/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ray.Multiple-Choice-Engine";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ray.MultipleChoiceEngine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -383,8 +408,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HKAVBPG58A;
 				INFOPLIST_FILE = "Multiple Choice Engine/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ray.Multiple-Choice-Engine";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ray.MultipleChoiceEngine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

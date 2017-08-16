@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginTapped(_ sender: Any) {
         FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
             if error != nil {
-                print("Error")
+                print(error.debugDescription.description)
             } else {
                 print("Successful Signin")
                 self.performSegue(withIdentifier: "successLoginSegue", sender: nil)

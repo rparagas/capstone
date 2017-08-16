@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>334347416075-m5e2oqonjj7in24raa8d8o071jrs32cn.apps.googleusercontent.com</string>
+	<string>375682594121-brujdm2khu1m7s02boqujj5384t9jr1m.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.334347416075-m5e2oqonjj7in24raa8d8o071jrs32cn</string>
+	<string>com.googleusercontent.apps.375682594121-brujdm2khu1m7s02boqujj5384t9jr1m</string>
 	<key>API_KEY</key>
-	<string>AIzaSyB0__tJ2DNHxkDP9UyUU761fZURB1mZaRs</string>
+	<string>AIzaSyD-IjUwZaLBY0g-jVqWojFXwNzTUIjp3_s</string>
 	<key>GCM_SENDER_ID</key>
-	<string>334347416075</string>
+	<string>375682594121</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.ray.Firebase-SnapchatClone</string>
+	<string>com.ray.MultipleChoiceEngine</string>
 	<key>PROJECT_ID</key>
-	<string>snapchatclone-8104d</string>
+	<string>multiple-choice-engine-7e071</string>
 	<key>STORAGE_BUCKET</key>
-	<string>snapchatclone-8104d.appspot.com</string>
+	<string>multiple-choice-engine-7e071.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:334347416075:ios:7c88a8c414476805</string>
+	<string>1:375682594121:ios:c97d4894661d1686</string>
 	<key>DATABASE_URL</key>
-	<string>https://snapchatclone-8104d.firebaseio.com</string>
+	<string>https://multiple-choice-engine-7e071.firebaseio.com</string>
 </dict>
 </plist>
