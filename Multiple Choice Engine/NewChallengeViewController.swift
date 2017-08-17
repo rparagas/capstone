@@ -10,10 +10,12 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class NewChallengeTopicViewController: UIViewController {
+class NewChallengeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBOutlet weak var topicPickerView: UIPickerView!
     var currentUser = Student()
     var topics : [Topic] = []
+    var selectedTopic = Topic()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,5 +53,32 @@ class NewChallengeTopicViewController: UIViewController {
                 print(topic.topicName)
             }
         })
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return topics.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let topic = topics[row]
+        let string = NSAttributedString(string: topic.topicName)
+        return string
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedTopic = topics[row]
+        //getStudentsInClass()
+    }
+    
+    func getStudentsInClass() {
+        
+    }
+    
+    @IBAction func confirmTapped(_ sender: Any) {
+        
     }
 }

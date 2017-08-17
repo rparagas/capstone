@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>375682594121-brujdm2khu1m7s02boqujj5384t9jr1m.apps.googleusercontent.com</string>
+	<string>96156742524-q0pn92lnre5ge514r1t1fkuq6m6lda3j.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.375682594121-brujdm2khu1m7s02boqujj5384t9jr1m</string>
+	<string>com.googleusercontent.apps.96156742524-q0pn92lnre5ge514r1t1fkuq6m6lda3j</string>
 	<key>API_KEY</key>
-	<string>AIzaSyD-IjUwZaLBY0g-jVqWojFXwNzTUIjp3_s</string>
+	<string>AIzaSyBO7qfdFpeKaBODhfDgDR6ICgl_JCscEWI</string>
 	<key>GCM_SENDER_ID</key>
-	<string>375682594121</string>
+	<string>96156742524</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.ray.MultipleChoiceEngine</string>
+	<string>com.ray.capstoneMultipleChoiceEngine</string>
 	<key>PROJECT_ID</key>
-	<string>multiple-choice-engine-7e071</string>
+	<string>capstone-multiplechoicee-eda53</string>
 	<key>STORAGE_BUCKET</key>
-	<string>multiple-choice-engine-7e071.appspot.com</string>
+	<string>capstone-multiplechoicee-eda53.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:375682594121:ios:c97d4894661d1686</string>
+	<string>1:96156742524:ios:497322ec50a39174</string>
 	<key>DATABASE_URL</key>
-	<string>https://multiple-choice-engine-7e071.firebaseio.com</string>
+	<string>https://capstone-multiplechoicee-eda53.firebaseio.com</string>
 </dict>
 </plist>
