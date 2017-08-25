@@ -19,6 +19,8 @@
 		A62E9EF11F448E0C002CD22E /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E9EF01F448E0C002CD22E /* Student.swift */; };
 		A62E9EF31F4492F4002CD22E /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E9EF21F4492F4002CD22E /* UserClass.swift */; };
 		A62E9EF51F4583DA002CD22E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A62E9EF41F4583DA002CD22E /* GoogleService-Info.plist */; };
+		A6757A3C1F4FDF3400144FAC /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6757A3B1F4FDF3400144FAC /* Challenge.swift */; };
+		A6757A3E1F4FFEA700144FAC /* ChallengeStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6757A3D1F4FFEA700144FAC /* ChallengeStatusViewController.swift */; };
 		F1339186E3F76D3442C4F2A7 /* Pods_Multiple_Choice_Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E73DC6785847BA3CEE64C470 /* Pods_Multiple_Choice_Engine.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		A62E9EF01F448E0C002CD22E /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		A62E9EF21F4492F4002CD22E /* UserClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
 		A62E9EF41F4583DA002CD22E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A6757A3B1F4FDF3400144FAC /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		A6757A3D1F4FFEA700144FAC /* ChallengeStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeStatusViewController.swift; sourceTree = "<group>"; };
 		E73DC6785847BA3CEE64C470 /* Pods_Multiple_Choice_Engine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Multiple_Choice_Engine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,6 +98,7 @@
 				A62E9EB11F440004002CD22E /* LoginViewController.swift */,
 				A62E9EE81F447B35002CD22E /* HomeViewController.swift */,
 				A62E9EEA1F447BB8002CD22E /* NewChallengeViewController.swift */,
+				A6757A3D1F4FFEA700144FAC /* ChallengeStatusViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 				A62E9EEE1F447F94002CD22E /* Question.swift */,
 				A62E9EF01F448E0C002CD22E /* Student.swift */,
 				A62E9EF21F4492F4002CD22E /* UserClass.swift */,
+				A6757A3B1F4FDF3400144FAC /* Challenge.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -258,7 +264,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6757A3E1F4FFEA700144FAC /* ChallengeStatusViewController.swift in Sources */,
 				A62E9EB21F440004002CD22E /* LoginViewController.swift in Sources */,
+				A6757A3C1F4FDF3400144FAC /* Challenge.swift in Sources */,
 				A62E9EED1F447EB9002CD22E /* Topic.swift in Sources */,
 				A62E9EB01F440004002CD22E /* AppDelegate.swift in Sources */,
 				A62E9EEF1F447F94002CD22E /* Question.swift in Sources */,
