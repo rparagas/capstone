@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "newChallengeSegue" {
-            let nextVC = segue.destination as! NewChallengeTopicViewController
+            let nextVC = segue.destination as! NewChallengeViewController
             nextVC.currentUser = user
             print(user.subject)
         }

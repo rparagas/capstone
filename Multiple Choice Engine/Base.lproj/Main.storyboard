@@ -43,7 +43,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wa-Wv-xhR">
                                 <rect key="frame" x="40" y="259" width="294" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e9h-FV-cAW"/>
                                 </connections>
@@ -114,10 +114,10 @@
             </objects>
             <point key="canvasLocation" x="1993" y="134"/>
         </scene>
-        <!--New Challenge Topic View Controller-->
+        <!--New Challenge View Controller-->
         <scene sceneID="bXe-dk-1ea">
             <objects>
-                <viewController id="TrC-LI-1L4" customClass="NewChallengeTopicViewController" sceneMemberID="viewController">
+                <viewController id="TrC-LI-1L4" customClass="NewChallengeViewController" customModule="Multiple_Choice_Engine" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V7n-6w-5Ok"/>
                         <viewControllerLayoutGuide type="bottom" id="Htj-3O-C5g"/>
@@ -125,12 +125,72 @@
                     <view key="view" contentMode="scaleToFill" id="u84-so-qbK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uHp-fs-FRU">
+                                <rect key="frame" x="27" y="112" width="320" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="vdj-W6-MOc"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cM-5C-39S">
+                                <rect key="frame" x="160" y="469" width="55" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="abp-7X-Pm3"/>
+                                </constraints>
+                                <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="confirmTapped:" destination="TrC-LI-1L4" eventType="touchUpInside" id="wLd-od-CbX"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2be-Xk-flJ">
+                                <rect key="frame" x="27" y="298" width="320" height="120"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a topic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUh-eK-bl5">
+                                <rect key="frame" x="135" y="83" width="105" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="A4Q-7g-NOZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a student to challenge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hi5-Xy-yn5">
+                                <rect key="frame" x="76" y="269" width="223" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Cwr-zf-y7B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2be-Xk-flJ" firstAttribute="centerX" secondItem="u84-so-qbK" secondAttribute="centerX" id="JgM-vc-Qty"/>
+                            <constraint firstItem="hUh-eK-bl5" firstAttribute="centerX" secondItem="u84-so-qbK" secondAttribute="centerX" id="MHG-xI-58k"/>
+                            <constraint firstItem="0cM-5C-39S" firstAttribute="top" secondItem="2be-Xk-flJ" secondAttribute="bottom" constant="51" id="P8Z-hH-V4c"/>
+                            <constraint firstItem="uHp-fs-FRU" firstAttribute="top" secondItem="hUh-eK-bl5" secondAttribute="bottom" constant="8" symbolic="YES" id="VFy-J1-Du2"/>
+                            <constraint firstItem="Htj-3O-C5g" firstAttribute="top" secondItem="0cM-5C-39S" secondAttribute="bottom" constant="168" id="cdh-yk-A8V"/>
+                            <constraint firstItem="hUh-eK-bl5" firstAttribute="top" secondItem="V7n-6w-5Ok" secondAttribute="bottom" constant="63" id="dXw-Bd-Km2"/>
+                            <constraint firstItem="2be-Xk-flJ" firstAttribute="top" secondItem="Hi5-Xy-yn5" secondAttribute="bottom" constant="8" symbolic="YES" id="fBt-bg-8a5"/>
+                            <constraint firstItem="uHp-fs-FRU" firstAttribute="centerX" secondItem="u84-so-qbK" secondAttribute="centerX" id="lqc-gS-9MB"/>
+                            <constraint firstItem="Hi5-Xy-yn5" firstAttribute="top" secondItem="uHp-fs-FRU" secondAttribute="bottom" constant="37" id="mWf-XS-W5z"/>
+                            <constraint firstItem="0cM-5C-39S" firstAttribute="centerX" secondItem="u84-so-qbK" secondAttribute="centerX" id="ne5-nD-NVJ"/>
+                            <constraint firstItem="Hi5-Xy-yn5" firstAttribute="centerX" secondItem="u84-so-qbK" secondAttribute="centerX" id="q5h-3p-sB1"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="IwT-CE-JQP">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="xqd-gT-Zrw"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="studentPickerView" destination="2be-Xk-flJ" id="5rS-oD-UOY"/>
+                        <outlet property="topicPickerView" destination="uHp-fs-FRU" id="wCY-J0-cBz"/>
+                        <segue destination="PZK-B6-dYd" kind="show" identifier="topicConfirmTapped" id="gtv-Q8-zzZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w6b-0R-JSg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2783" y="-269"/>
+            <point key="canvasLocation" x="2781.5999999999999" y="-269.41529235382313"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7M1-87-pNu">

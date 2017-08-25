@@ -13,36 +13,28 @@ import FirebaseDatabase
 class NewChallengeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var topicPickerView: UIPickerView!
+    @IBOutlet weak var studentPickerView: UIPickerView!
+    
     var currentUser = Student()
     var topics : [Topic] = []
     var selectedTopic = Topic()
+    var students : [Student] = []
+    var selectedStudent = Student()
+    var questionPool : [Question] = []
+    var selectedQuestions : [Question] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //getStudentDetails()
-        getTopic()
+        topicPickerView.delegate = self
+        topicPickerView.dataSource = self
+        studentPickerView.delegate = self
+        studentPickerView.dataSource = self
+        
+        getTopics()
         // Do any additional setup after loading the view.
     }
-  
-    func getStudentDetails() {
-        print(FIRAuth.auth()!.currentUser!.uid)
-        FIRDatabase.database().reference().child("students").observe(FIRDataEventType.childAdded, with: {(snapshot) in
-            let user = Student()
-            user.studentID = snapshot.key
-            user.classID = (snapshot.value as! NSDictionary)["classID"] as! String
-            user.firstName = (snapshot.value as! NSDictionary)["firstName"] as! String
-            user.lastName = (snapshot.value as! NSDictionary)["lastName"] as! String
-            user.username = (snapshot.value as! NSDictionary)["username"] as! String
-            user.subject = (snapshot.value as! NSDictionary)["subject"] as! String
-            if (user.studentID == FIRAuth.auth()!.currentUser!.uid) {
-                self.currentUser = user
-                self.getTopic()
-            }
-            // add a reload pickerview
-        })
-    }
     
-    func getTopic() {
+    func getTopics(){
         FIRDatabase.database().reference().child("topic").child(currentUser.subject).observe(FIRDataEventType.childAdded, with: {(snapshot) in
             let topic = Topic()
             topic.topicID = snapshot.key
@@ -52,6 +44,7 @@ class NewChallengeViewController: UIViewController, UIPickerViewDelegate, UIPick
                 self.topics.append(topic)
                 print(topic.topicName)
             }
+            self.topicPickerView.reloadAllComponents()
         })
     }
     
@@ -60,25 +53,99 @@ class NewChallengeViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return topics.count
+        if pickerView == self.topicPickerView {
+            return topics.count
+        } else {
+            return students.count
+        }
     }
     
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let topic = topics[row]
-        let string = NSAttributedString(string: topic.topicName)
-        return string
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == self.topicPickerView {
+            let topic = topics[row]
+            return topic.topicName
+        } else {
+            let student = students[row]
+            let string = student.firstName + " " + student.lastName
+            return string
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedTopic = topics[row]
-        //getStudentsInClass()
+        if pickerView == self.topicPickerView {
+            selectedTopic = topics[row]
+            getStudentsInClass()
+        } else {
+            selectedStudent = students[row]
+            getQuestionsinTopic()
+        }
+        
     }
     
     func getStudentsInClass() {
-        
+        FIRDatabase.database().reference().child("students").observe(FIRDataEventType.childAdded, with: {(snapshot) in
+            let student = Student()
+            student.studentID = snapshot.key
+            student.classID = (snapshot.value as! NSDictionary)["classID"] as! String
+            student.firstName = (snapshot.value as! NSDictionary)["firstName"] as! String
+            student.lastName = (snapshot.value as! NSDictionary)["lastName"] as! String
+            student.username = (snapshot.value as! NSDictionary)["username"] as! String
+            student.subject = (snapshot.value as! NSDictionary)["subject"] as! String
+            if student.studentID != FIRAuth.auth()!.currentUser!.uid {
+                self.students.append(student)
+                self.studentPickerView.reloadAllComponents()
+            }
+        })
+    }
+    
+    func getQuestionsinTopic() {
+        FIRDatabase.database().reference().child("questions").child(currentUser.subject).child(selectedTopic.topicID).observe(FIRDataEventType.childAdded, with: {(snapshot) in
+            let question = Question()
+            question.questionID = snapshot.key
+            question.question = (snapshot.value as! NSDictionary)["question"] as! String
+            self.questionPool.append(question)
+            print(question.question)
+        })
+    }
+    
+    func selectRandomQuestions() {
+        var usedIndex : [Int] = []
+        while usedIndex.count < 5 {
+            let randomIndex = Int(arc4random_uniform(UInt32(questionPool.count)))
+            if (!usedIndex.contains(randomIndex)) {
+                selectedQuestions.append(questionPool[randomIndex])
+                usedIndex.append(randomIndex)
+            }
+        }
     }
     
     @IBAction func confirmTapped(_ sender: Any) {
+        selectRandomQuestions()
+        let uuid = NSUUID().uuidString
+        let questions = ["question1" : selectedQuestions[0].questionID,
+                         "question2" : selectedQuestions[1].questionID,
+                         "question3" : selectedQuestions[2].questionID,
+                         "question4": selectedQuestions[3].questionID,
+                         "question5": selectedQuestions[4].questionID]
+        let challenge = [
+            "challengerID" : selectedStudent.studentID,
+            "questions" : questions,
+            "senderID" : currentUser.studentID,
+            "status" : "pending",
+            "topicID" : selectedTopic.topicID,
+            "winner" : "nil"] as [String : Any]
+        FIRDatabase.database().reference().child("challenges").child(uuid).setValue(challenge)
         
+        let studentChallengeChallenger = ["result" : "nil",
+                                           "score": 0,
+                                           "status" : "pending",
+                                           "userType" : "challenger"] as [String : Any]
+        FIRDatabase.database().reference().child("studentChallenges").child(selectedStudent.studentID).child(uuid).setValue(studentChallengeChallenger)
+        
+        let studentChallengeSender = ["result" : "nil",
+                                      "score" : 0,
+                                      "status" : "pending",
+                                      "userType" : "sender"] as [String : Any]
+        FIRDatabase.database().reference().child("studentChallenges").child(currentUser.studentID).child(uuid).setValue(studentChallengeSender)
     }
 }
