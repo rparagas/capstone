@@ -40,6 +40,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let nextVC = segue.destination as! ChallengeStatusViewController
             nextVC.challenge = selectedChallenge
             nextVC.currentUser = user
+            nextVC.previousVC = self
         }
     }
     
@@ -55,12 +56,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedChallenge = userChallenges[indexPath.row]
+        
         performSegue(withIdentifier: "statusSegue", sender: nil)
     }
     
     
-    
     func getStudentDetails() {
+        user = Student()
         FIRDatabase.database().reference().child("students").observe(FIRDataEventType.childAdded, with: {(snapshot) in
             let user = Student()
             user.studentID = snapshot.key
@@ -77,6 +79,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func getStudentChallenges() {
+        userChallenges = []
         FIRDatabase.database().reference().child("challenges").observe(FIRDataEventType.childAdded, with: {(snapshot) in
             let challenge = Challenge()
             challenge.challengeID = snapshot.key

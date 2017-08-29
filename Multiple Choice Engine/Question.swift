@@ -16,4 +16,6 @@ class Question {
     var option3 = ""
     var option4 = ""
     var answer = ""
+    var selectedAnswer = ""
+    var timeTaken = 0.00
 }

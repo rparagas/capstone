@@ -157,7 +157,7 @@
                                 <rect key="frame" x="163" y="332" width="49" height="30"/>
                                 <state key="normal" title="Accept"/>
                                 <connections>
-                                    <action selector="acceptTapped:" destination="nTV-UB-egn" eventType="touchUpInside" id="Fgs-jJ-LRm"/>
+                                    <action selector="acceptStartTapped:" destination="nTV-UB-egn" eventType="touchUpInside" id="jnk-1i-88r"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Science" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSA-5J-KPW">
@@ -236,15 +236,117 @@
                     </view>
                     <navigationItem key="navigationItem" id="UPG-BW-oaD"/>
                     <connections>
+                        <outlet property="acceptStartButton" destination="nNf-23-baj" id="Yky-SV-iih"/>
                         <outlet property="challengerLabel" destination="FhX-Xr-ZCg" id="vJY-dH-5cC"/>
+                        <outlet property="declineButton" destination="Kzf-h3-AUD" id="D7X-UF-OOt"/>
                         <outlet property="statusLabel" destination="rz1-en-kXg" id="iiT-zV-pje"/>
                         <outlet property="subjectLabel" destination="PSA-5J-KPW" id="Hh3-Ym-l6R"/>
                         <outlet property="topicLabel" destination="xVL-9c-LIZ" id="y4W-mw-r4Q"/>
+                        <segue destination="Grf-dx-CIL" kind="presentation" identifier="startChallengeSegue" id="iX9-TM-t2h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ugv-4D-GVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1992.8" y="906.29685157421295"/>
+            <point key="canvasLocation" x="2782" y="134"/>
+        </scene>
+        <!--Challenge View Controller-->
+        <scene sceneID="ZbW-dQ-puo">
+            <objects>
+                <viewController id="Grf-dx-CIL" customClass="ChallengeViewController" customModule="Multiple_Choice_Engine" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ccn-0e-MB0"/>
+                        <viewControllerLayoutGuide type="bottom" id="iHd-UM-3eK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="94k-7Y-P1m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb6-qa-aDj">
+                                <rect key="frame" x="0.0" y="339" width="182" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.047348900131228056" green="1" blue="0.19539998919099288" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="OPTION 1"/>
+                                <connections>
+                                    <action selector="option1Tapped:" destination="Grf-dx-CIL" eventType="touchUpInside" id="ymG-Oq-eWc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nb-g8-UBv">
+                                <rect key="frame" x="190" y="339" width="185" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.035950173232909055" green="0.078219667583351637" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="OPTION 2"/>
+                                <connections>
+                                    <action selector="option2Tapped:" destination="Grf-dx-CIL" eventType="touchUpInside" id="1mD-eg-C1V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxB-sA-9F8">
+                                <rect key="frame" x="0.0" y="507" width="182" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96729511020000003" green="0.69462406639999996" blue="0.26767939330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="OPTION 3"/>
+                                <connections>
+                                    <action selector="option3Tapped:" destination="Grf-dx-CIL" eventType="touchUpInside" id="yBn-ax-VhR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTk-EY-s2R">
+                                <rect key="frame" x="190" y="507" width="185" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.028078071964938167" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="OPTION 4"/>
+                                <connections>
+                                    <action selector="option4Tapped:" destination="Grf-dx-CIL" eventType="touchUpInside" id="bTt-mk-U6y"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sp-5S-aLV">
+                                <rect key="frame" x="16" y="107" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="the actual question ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kun-zW-ycM">
+                                <rect key="frame" x="16" y="168" width="343" height="141"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWC-L0-j5l">
+                                <rect key="frame" x="143" y="28" width="89" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="00:20"/>
+                                <connections>
+                                    <action selector="startButtonTapped:" destination="Grf-dx-CIL" eventType="touchUpInside" id="6rX-2e-ZJm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKL-uz-2EM">
+                                <rect key="frame" x="151" y="36" width="73" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="option1Button" destination="Tb6-qa-aDj" id="kSM-98-JSW"/>
+                        <outlet property="option2Button" destination="1nb-g8-UBv" id="p8p-Ej-CiP"/>
+                        <outlet property="option3Button" destination="UxB-sA-9F8" id="RjL-IZ-2U7"/>
+                        <outlet property="option4Button" destination="bTk-EY-s2R" id="OOj-3Q-QWe"/>
+                        <outlet property="questionLabel" destination="kun-zW-ycM" id="hdO-SD-V6n"/>
+                        <outlet property="questionNumberLabel" destination="9Sp-5S-aLV" id="nFN-IX-t61"/>
+                        <outlet property="timeButton" destination="WWC-L0-j5l" id="TTq-qA-muh"/>
+                        <outlet property="timerLabel" destination="fKL-uz-2EM" id="obD-23-AcF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jlz-a6-0VM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3597.5999999999999" y="133.5832083958021"/>
         </scene>
         <!--New Challenge View Controller-->
         <scene sceneID="bXe-dk-1ea">
@@ -322,6 +424,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w6b-0R-JSg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2782" y="-562"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="h7x-bB-zKu">
+            <objects>
+                <viewController id="Qna-EB-HXr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DWx-9i-auG"/>
+                        <viewControllerLayoutGuide type="bottom" id="QNa-oH-5MG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ewo-Rf-tgV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KU4-hS-hig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
 </document>

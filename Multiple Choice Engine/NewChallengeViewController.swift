@@ -147,5 +147,6 @@ class NewChallengeViewController: UIViewController, UIPickerViewDelegate, UIPick
                                       "status" : "pending",
                                       "userType" : "sender"] as [String : Any]
         FIRDatabase.database().reference().child("studentChallenges").child(currentUser.studentID).child(uuid).setValue(studentChallengeSender)
+        navigationController?.popToRootViewController(animated: true)
     }
 }
