@@ -22,6 +22,7 @@
 		A669B6A81F528F210069D750 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A669B6A71F528F210069D750 /* ChallengeViewController.swift */; };
 		A6757A3C1F4FDF3400144FAC /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6757A3B1F4FDF3400144FAC /* Challenge.swift */; };
 		A6757A3E1F4FFEA700144FAC /* ChallengeStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6757A3D1F4FFEA700144FAC /* ChallengeStatusViewController.swift */; };
+		A681E5001F5FA0080050623A /* ChallengeSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A681E4FF1F5FA0080050623A /* ChallengeSummaryViewController.swift */; };
 		F1339186E3F76D3442C4F2A7 /* Pods_Multiple_Choice_Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E73DC6785847BA3CEE64C470 /* Pods_Multiple_Choice_Engine.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		A669B6A71F528F210069D750 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		A6757A3B1F4FDF3400144FAC /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		A6757A3D1F4FFEA700144FAC /* ChallengeStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeStatusViewController.swift; sourceTree = "<group>"; };
+		A681E4FF1F5FA0080050623A /* ChallengeSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeSummaryViewController.swift; sourceTree = "<group>"; };
 		E73DC6785847BA3CEE64C470 /* Pods_Multiple_Choice_Engine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Multiple_Choice_Engine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 				A62E9EEA1F447BB8002CD22E /* NewChallengeViewController.swift */,
 				A6757A3D1F4FFEA700144FAC /* ChallengeStatusViewController.swift */,
 				A669B6A71F528F210069D750 /* ChallengeViewController.swift */,
+				A681E4FF1F5FA0080050623A /* ChallengeSummaryViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				A669B6A81F528F210069D750 /* ChallengeViewController.swift in Sources */,
 				A6757A3E1F4FFEA700144FAC /* ChallengeStatusViewController.swift in Sources */,
 				A62E9EB21F440004002CD22E /* LoginViewController.swift in Sources */,
+				A681E5001F5FA0080050623A /* ChallengeSummaryViewController.swift in Sources */,
 				A6757A3C1F4FDF3400144FAC /* Challenge.swift in Sources */,
 				A62E9EED1F447EB9002CD22E /* Topic.swift in Sources */,
 				A62E9EB01F440004002CD22E /* AppDelegate.swift in Sources */,

@@ -29,6 +29,7 @@ class ChallengeViewController: UIViewController {
     var questionCounter = 0
     var timer = Timer()
     var currentTimeInSeconds = 0.00
+    var totalScore = 0.00
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,38 +90,41 @@ class ChallengeViewController: UIViewController {
                 print(question.selectedAnswer)
                 print(question.timeTaken)
             }
+            calculateAnswer()
+            // upload answers
+            performSegue(withIdentifier: "challengeCompleteSegue", sender: nil)
         }
     }
     
     @IBAction func option1Tapped(_ sender: Any) {
         saveAnswer(option: 1)
-        questionSet[questionCounter].timeTaken = 0
-        incrementQuestionCounter()
+        saveTimeUsed()
         setTime()
+        incrementQuestionCounter()
         displayQuestion()
     }
     
     @IBAction func option2Tapped(_ sender: Any) {
         saveAnswer(option: 2)
         saveTimeUsed()
-        incrementQuestionCounter()
         setTime()
+        incrementQuestionCounter()
         displayQuestion()
     }
     
     @IBAction func option3Tapped(_ sender: Any) {
         saveAnswer(option: 3)
         saveTimeUsed()
-        incrementQuestionCounter()
         setTime()
+        incrementQuestionCounter()
         displayQuestion()
     }
     
     @IBAction func option4Tapped(_ sender: Any) {
         saveAnswer(option: 4)
         saveTimeUsed()
-        incrementQuestionCounter()
         setTime()
+        incrementQuestionCounter()
         displayQuestion()
     }
     
@@ -133,7 +137,11 @@ class ChallengeViewController: UIViewController {
     }
     
     func saveTimeUsed() {
-        questionSet[questionCounter].timeTaken = currentTimeInSeconds
+        if currentTimeInSeconds <= 0 {
+            questionSet[questionCounter].timeTaken = currentTimeInSeconds
+        } else {
+            questionSet[questionCounter].timeTaken = currentTimeInSeconds
+        }
     }
 
     func saveAnswer(option: Int) {
@@ -146,6 +154,59 @@ class ChallengeViewController: UIViewController {
         } else if (option == 4) {
             questionSet[questionCounter].selectedAnswer = "option4"
         }
+    }
+    
+    func calculateAnswer() {
+        timer.invalidate()
+        for question in questionSet {
+            if question.answer == question.selectedAnswer {
+                totalScore += 1000 * question.timeTaken
+            } else {
+                question.timeTaken = 0.0
+            }
+        }
+        print(Int(totalScore))
+    }
+    
+    func uploadAnswers() {
+        let questionZero = ["answer": questionSet[0].selectedAnswer,
+                            "time": questionSet[0].timeTaken
+        ] as [String : Any]
+        
+        let questionOne = ["answer": questionSet[1].selectedAnswer,
+                            "time": questionSet[1].timeTaken
+        ] as [String : Any]
+        
+        let questionTwo = ["answer": questionSet[2].selectedAnswer,
+                            "time": questionSet[2].timeTaken
+        ] as [String : Any]
+        
+        let questionThree = ["answer": questionSet[3].selectedAnswer,
+                            "time": questionSet[3].timeTaken
+        ] as [String : Any]
+        
+        let questionFour = ["answer": questionSet[4].selectedAnswer,
+                            "time": questionSet[4].timeTaken
+        ] as [String : Any]
+        
+        let answers = [questionSet[0].questionID : questionZero,
+                       questionSet[1].questionID : questionOne,
+                       questionSet[2].questionID : questionTwo,
+                       questionSet[3].questionID : questionThree,
+                       questionSet[4].questionID : questionFour
+        ] as [String : Any]
+        
+        FIRDatabase.database().reference().child("studentChallenges").child(currentUser.studentID).child(challenge.challengeID).child("score").setValue(Int(totalScore))
+        
+        FIRDatabase.database().reference().child("studentChallenges").child(currentUser.studentID).child(challenge.challengeID).child("answers").setValue(answers)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! ChallengeSummaryViewController
+        nextVC.challenge = challenge
+        nextVC.currentUser = currentUser
+        nextVC.questionSet = questionSet
+        nextVC.totalScore = Int(totalScore)
     }
     
 }

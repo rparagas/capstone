@@ -342,11 +342,62 @@
                         <outlet property="questionNumberLabel" destination="9Sp-5S-aLV" id="nFN-IX-t61"/>
                         <outlet property="timeButton" destination="WWC-L0-j5l" id="TTq-qA-muh"/>
                         <outlet property="timerLabel" destination="fKL-uz-2EM" id="obD-23-AcF"/>
+                        <segue destination="kSf-W5-XJv" kind="presentation" identifier="challengeCompleteSegue" id="EG2-Po-Jcr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jlz-a6-0VM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3597.5999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--Challenge Summary View Controller-->
+        <scene sceneID="2fi-Rv-yTh">
+            <objects>
+                <viewController id="kSf-W5-XJv" customClass="ChallengeSummaryViewController" customModule="Multiple_Choice_Engine" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Xw-hf-cH1"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZzE-ZX-0V0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uet-rw-jwa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Challenge Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6z-9V-HsQ">
+                                <rect key="frame" x="119" y="45" width="137" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eGe-RI-FeE">
+                                <rect key="frame" x="0.0" y="164" width="375" height="503"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOM-bE-0eU">
+                                <rect key="frame" x="214" y="100" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Score :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJb-M4-9Uw">
+                                <rect key="frame" x="89" y="100" width="96" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="scoreSummaryTableView" destination="eGe-RI-FeE" id="Qsp-DU-93x"/>
+                        <outlet property="totalScoreLabel" destination="MOM-bE-0eU" id="yur-t3-Ed0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pi3-EE-5vF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4413.6000000000004" y="133.5832083958021"/>
         </scene>
         <!--New Challenge View Controller-->
         <scene sceneID="bXe-dk-1ea">
@@ -424,23 +475,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w6b-0R-JSg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2782" y="-562"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="h7x-bB-zKu">
-            <objects>
-                <viewController id="Qna-EB-HXr" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="DWx-9i-auG"/>
-                        <viewControllerLayoutGuide type="bottom" id="QNa-oH-5MG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ewo-Rf-tgV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KU4-hS-hig" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
 </document>
