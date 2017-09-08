@@ -17,7 +17,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var challengesTableView: UITableView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         getStudentDetails()
@@ -42,6 +41,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             nextVC.currentUser = user
             nextVC.previousVC = self
         }
+        if segue.identifier == "showCompletedChallengeSegue" {
+            let nextVC = segue.destination as! ChallengeSummaryViewController
+            nextVC.challenge = selectedChallenge
+            nextVC.currentUser = user
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,8 +60,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedChallenge = userChallenges[indexPath.row]
+        if user.studentID == selectedChallenge.challengerID && selectedChallenge.isChallengerComplete == false {
+            performSegue(withIdentifier: "statusSegue", sender: nil)
+        } else if user.studentID == selectedChallenge.challengerID && selectedChallenge.isChallengerComplete == true {
+            performSegue(withIdentifier: "showCompletedChallengeSegue", sender: nil)
+        }
         
-        performSegue(withIdentifier: "statusSegue", sender: nil)
+        if user.studentID == selectedChallenge.senderID && selectedChallenge.isSenderComplete == false {
+            performSegue(withIdentifier: "statusSegue", sender: nil)
+        } else if user.studentID == selectedChallenge.senderID && selectedChallenge.isSenderComplete == true {
+            performSegue(withIdentifier: "showCompletedChallengeSegue", sender: nil)
+        }
+        
     }
     
     
@@ -87,10 +101,28 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             challenge.challengerID = (snapshot.value as! NSDictionary)["challengerID"] as! String
             challenge.senderID = (snapshot.value as! NSDictionary)["senderID"] as! String
             challenge.topic = (snapshot.value as! NSDictionary)["topic"] as! String
+            challenge.isChallengerComplete = (snapshot.value as! NSDictionary)["isChallengerComplete"] as! Bool
+            challenge.isSenderComplete = (snapshot.value as! NSDictionary)["isSenderComplete"] as! Bool
+            challenge.challengerScore = (snapshot.value as! NSDictionary)["challengerScore"] as! Int
+            challenge.senderScore = (snapshot.value as! NSDictionary)["senderScore"] as! Int
+            
+            if challenge.challengerID == self.user.studentID {
+                challenge.userType = "challenger"
+            } else {
+                challenge.userType = "sender"
+            }
+            
             if challenge.challengerID == self.user.studentID || challenge.senderID == self.user.studentID {
                 self.userChallenges.append(challenge)
                 print(challenge.challengeID)
             }
+            
+            if challenge.isSenderComplete == true && challenge.isChallengerComplete == true {
+                if challenge.challengerScore > challenge.senderScore {
+                    //  WINNER
+                }
+            }
+        
             self.challengesTableView.reloadData()
         })
     }

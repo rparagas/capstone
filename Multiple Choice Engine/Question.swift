@@ -18,4 +18,5 @@ class Question {
     var answer = ""
     var selectedAnswer = ""
     var timeTaken = 0.00
+    var isCorrect = false
 }

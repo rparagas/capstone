@@ -18,4 +18,8 @@ class Challenge {
     var senderID = ""
     var topic = ""
     var questions : [Question] = []
+    var isChallengerComplete = false
+    var isSenderComplete = false
+    var challengerScore = 0
+    var senderScore = 0
 }

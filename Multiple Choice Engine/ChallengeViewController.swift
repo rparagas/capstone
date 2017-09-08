@@ -91,7 +91,7 @@ class ChallengeViewController: UIViewController {
                 print(question.timeTaken)
             }
             calculateAnswer()
-            // upload answers
+            uploadAnswers()
             performSegue(withIdentifier: "challengeCompleteSegue", sender: nil)
         }
     }
@@ -159,6 +159,7 @@ class ChallengeViewController: UIViewController {
     func calculateAnswer() {
         timer.invalidate()
         for question in questionSet {
+            checkAnwers(question: question)
             if question.answer == question.selectedAnswer {
                 totalScore += 1000 * question.timeTaken
             } else {
@@ -168,28 +169,41 @@ class ChallengeViewController: UIViewController {
         print(Int(totalScore))
     }
     
+    func checkAnwers(question: Question) {
+        if (question.answer == question.selectedAnswer) {
+            question.isCorrect = true
+        } else if (question.answer != question.selectedAnswer) {
+            question.isCorrect = false
+        }
+    }
+    
     func uploadAnswers() {
         let questionZero = ["answer": questionSet[0].selectedAnswer,
-                            "time": questionSet[0].timeTaken
+                            "time": questionSet[0].timeTaken,
+                            "isCorrect":questionSet[0].isCorrect
         ] as [String : Any]
         
         let questionOne = ["answer": questionSet[1].selectedAnswer,
-                            "time": questionSet[1].timeTaken
+                           "time": questionSet[1].timeTaken,
+                           "isCorrect":questionSet[1].isCorrect
         ] as [String : Any]
         
         let questionTwo = ["answer": questionSet[2].selectedAnswer,
-                            "time": questionSet[2].timeTaken
+                           "time": questionSet[2].timeTaken,
+                           "isCorrect":questionSet[2].isCorrect
         ] as [String : Any]
         
         let questionThree = ["answer": questionSet[3].selectedAnswer,
-                            "time": questionSet[3].timeTaken
+                             "time": questionSet[3].timeTaken,
+                             "isCorrect":questionSet[3].isCorrect
         ] as [String : Any]
         
         let questionFour = ["answer": questionSet[4].selectedAnswer,
-                            "time": questionSet[4].timeTaken
+                            "time": questionSet[4].timeTaken,
+                            "isCorrect":questionSet[4].isCorrect
         ] as [String : Any]
         
-        let answers = [questionSet[0].questionID : questionZero,
+        let results = [questionSet[0].questionID : questionZero,
                        questionSet[1].questionID : questionOne,
                        questionSet[2].questionID : questionTwo,
                        questionSet[3].questionID : questionThree,
@@ -198,7 +212,22 @@ class ChallengeViewController: UIViewController {
         
         FIRDatabase.database().reference().child("studentChallenges").child(currentUser.studentID).child(challenge.challengeID).child("score").setValue(Int(totalScore))
         
-        FIRDatabase.database().reference().child("studentChallenges").child(currentUser.studentID).child(challenge.challengeID).child("answers").setValue(answers)
+        FIRDatabase.database().reference().child("studentChallenges").child(currentUser.studentID).child(challenge.challengeID).child("results").setValue(results)
+    
+        FIRDatabase.database().reference().child("studentChallenges").child(currentUser.studentID).child(challenge.challengeID).child("status").setValue("completed")
+        
+        if currentUser.studentID == challenge.challengerID {
+            FIRDatabase.database().reference().child("challenges").child(challenge.challengeID).child("isChallengerComplete").setValue(true)
+        } else {
+            FIRDatabase.database().reference().child("challenges").child(challenge.challengeID).child("isSenderComplete").setValue(true)
+        }
+        
+        if currentUser.studentID == challenge.challengerID {
+            FIRDatabase.database().reference().child("challenges").child(challenge.challengeID).child("challengerScore").setValue(Int(totalScore))
+        } else {
+            FIRDatabase.database().reference().child("challenges").child(challenge.challengeID).child("senderScore").setValue(Int(totalScore))
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
