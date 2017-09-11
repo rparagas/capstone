@@ -122,34 +122,30 @@ class NewChallengeViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBAction func confirmTapped(_ sender: Any) {
         selectRandomQuestions()
         let uuid = NSUUID().uuidString
+        uploadChallangeInfo(uuid : uuid)
         uploadChallangeChallenger(uuid: uuid)
         uploadChallengeSender(uuid : uuid)
-        uploadChallangeInfo(uuid : uuid)
-        uploadQuestions(uuid: uuid)
     }
     
     func uploadChallangeInfo(uuid : String) {
-        let newChallenge = ["challengerID" : selectedStudent.studentID,
-                            "challengerScore" : 0,
-                            "isChallengerComplete" : false,
-                            "senderID" : currentUser.studentID,
-                            "senderScore" : 0,
-                            "isSenderComplete" : "false",
-                            "status" : "pending",
-                            "topicID" : selectedTopic.topicName,
-                            "winner" : "nul"] as [String : Any]
- 
-        FIRDatabase.database().reference().child("challenges").child(uuid).setValue(newChallenge)
-    }
-    
-    func uploadQuestions(uuid : String) {
         let newQuestions = ["question1" : selectedQuestions[0].questionID,
                             "question2" : selectedQuestions[1].questionID,
                             "question3" : selectedQuestions[2].questionID,
                             "question4" : selectedQuestions[3].questionID,
                             "question5" : selectedQuestions[4].questionID] as [String : String]
         
-        FIRDatabase.database().reference().child("challenges").child(uuid).setValue(newQuestions)
+        let newChallenge = ["challengerID" : selectedStudent.studentID,
+                            "challengerScore" : 0,
+                            "isChallengerComplete" : false,
+                            "senderID" : currentUser.studentID,
+                            "senderScore" : 0,
+                            "questions" : newQuestions,
+                            "isSenderComplete" : false,
+                            "status" : "pending",
+                            "topic" : selectedTopic.topicName,
+                            "winner" : "nul"] as [String : Any]
+ 
+        FIRDatabase.database().reference().child("challenges").child(uuid).setValue(newChallenge)
     }
     
     func uploadChallangeChallenger(uuid : String) {
