@@ -19,6 +19,7 @@ class ChallengeSummaryViewController: UIViewController, UITableViewDataSource, U
     var totalScore = 0
     var currentUser = Student()
     var challenge = Challenge()
+    var cameFromChallenge = true
     
     
     override func viewDidLoad() {
@@ -26,6 +27,7 @@ class ChallengeSummaryViewController: UIViewController, UITableViewDataSource, U
         scoreSummaryTableView.dataSource = self
         scoreSummaryTableView.delegate = self
         if questionSet.count == 0 {
+            cameFromChallenge = false
             getChallengeResults()
         }
         updateTotal()
@@ -72,7 +74,11 @@ class ChallengeSummaryViewController: UIViewController, UITableViewDataSource, U
     }
     
     @IBAction func closeTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        if cameFromChallenge == false {
+            dismiss(animated: true, completion: nil)
+        } else {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
     }
 
 }

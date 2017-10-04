@@ -192,32 +192,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URE-gS-TDx">
-                                <rect key="frame" x="40" y="117" width="42" height="21"/>
+                                <rect key="frame" x="40" y="161" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cW2-nA-aWG">
-                                <rect key="frame" x="40" y="210" width="50" height="21"/>
+                                <rect key="frame" x="40" y="254" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Challenger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMr-W7-qev">
-                                <rect key="frame" x="40" y="165" width="83" height="21"/>
+                                <rect key="frame" x="40" y="209" width="83" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNf-23-baj">
-                                <rect key="frame" x="163" y="288" width="49" height="30"/>
+                                <rect key="frame" x="163" y="332" width="49" height="30"/>
                                 <state key="normal" title="Accept"/>
                                 <connections>
                                     <action selector="acceptStartTapped:" destination="nTV-UB-egn" eventType="touchUpInside" id="jnk-1i-88r"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Science" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSA-5J-KPW">
-                                <rect key="frame" x="189" y="70" width="163" height="21"/>
+                                <rect key="frame" x="189" y="114" width="163" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="163" id="gRP-6D-uWO"/>
                                 </constraints>
@@ -226,7 +226,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evolution" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVL-9c-LIZ">
-                                <rect key="frame" x="189" y="117" width="163" height="21"/>
+                                <rect key="frame" x="189" y="161" width="163" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="163" id="ahZ-Ti-ST4"/>
                                 </constraints>
@@ -235,7 +235,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ray" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhX-Xr-ZCg">
-                                <rect key="frame" x="189" y="165" width="163" height="21"/>
+                                <rect key="frame" x="189" y="209" width="163" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="163" id="EEF-1d-UMU"/>
                                 </constraints>
@@ -244,7 +244,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rz1-en-kXg">
-                                <rect key="frame" x="189" y="210" width="163" height="21"/>
+                                <rect key="frame" x="189" y="254" width="163" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="163" id="ZQe-59-DUX"/>
                                 </constraints>
@@ -253,14 +253,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzf-h3-AUD">
-                                <rect key="frame" x="162" y="326" width="52" height="30"/>
+                                <rect key="frame" x="162" y="370" width="52" height="30"/>
                                 <state key="normal" title="Decline"/>
                                 <connections>
                                     <action selector="declineTapped:" destination="nTV-UB-egn" eventType="touchUpInside" id="tLC-d3-Gyb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wu-er-Lu0">
-                                <rect key="frame" x="40" y="70" width="59" height="21"/>
+                                <rect key="frame" x="40" y="114" width="59" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -290,7 +290,9 @@
                             <constraint firstItem="TMr-W7-qev" firstAttribute="centerX" secondItem="KmF-HK-5yE" secondAttribute="centerX" constant="-106" id="w22-9i-xco"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="UPG-BW-oaD"/>
+                    <navigationItem key="navigationItem" id="UPG-BW-oaD">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="nOP-Jh-U6t"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="acceptStartButton" destination="nNf-23-baj" id="Yky-SV-iih"/>
                         <outlet property="challengerLabel" destination="FhX-Xr-ZCg" id="vJY-dH-5cC"/>
@@ -298,7 +300,7 @@
                         <outlet property="statusLabel" destination="rz1-en-kXg" id="iiT-zV-pje"/>
                         <outlet property="subjectLabel" destination="PSA-5J-KPW" id="Hh3-Ym-l6R"/>
                         <outlet property="topicLabel" destination="xVL-9c-LIZ" id="y4W-mw-r4Q"/>
-                        <segue destination="Grf-dx-CIL" kind="presentation" identifier="startChallengeSegue" id="iX9-TM-t2h"/>
+                        <segue destination="Grf-dx-CIL" kind="show" identifier="startChallengeSegue" id="iX9-TM-t2h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ugv-4D-GVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -398,7 +400,7 @@
                         <outlet property="questionNumberLabel" destination="9Sp-5S-aLV" id="nFN-IX-t61"/>
                         <outlet property="timeButton" destination="WWC-L0-j5l" id="TTq-qA-muh"/>
                         <outlet property="timerLabel" destination="fKL-uz-2EM" id="obD-23-AcF"/>
-                        <segue destination="kSf-W5-XJv" kind="presentation" identifier="challengeCompleteSegue" id="EG2-Po-Jcr"/>
+                        <segue destination="kSf-W5-XJv" kind="show" identifier="challengeCompleteSegue" id="EG2-Po-Jcr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jlz-a6-0VM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -457,6 +459,7 @@
                     <connections>
                         <outlet property="scoreSummaryTableView" destination="eGe-RI-FeE" id="Qsp-DU-93x"/>
                         <outlet property="totalScoreLabel" destination="MOM-bE-0eU" id="yur-t3-Ed0"/>
+                        <segue destination="Dwp-cO-VXG" kind="show" identifier="backToHomeSegue" action="showDetailViewController:sender:" id="WXP-Dw-I7P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pi3-EE-5vF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -550,6 +553,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LiZ-9j-VVg"/>
+        <segue reference="EG2-Po-Jcr"/>
+        <segue reference="WXP-Dw-I7P"/>
     </inferredMetricsTieBreakers>
 </document>

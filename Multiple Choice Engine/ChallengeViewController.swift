@@ -33,6 +33,7 @@ class ChallengeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         getQuestionSet()
         // Do any additional setup after loading the view.
     }

@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var user = Student()
     var userChallenges : [Challenge] = []
     var selectedChallenge = Challenge()
+    var fromSummary = false
     
     @IBOutlet weak var challengesTableView: UITableView!
     
@@ -23,6 +24,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         challengesTableView.delegate = self
         challengesTableView.dataSource = self
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     @IBAction func newChallengeTapped(_ sender: Any) {
