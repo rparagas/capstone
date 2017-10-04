@@ -72,7 +72,7 @@ class ChallengeSummaryViewController: UIViewController, UITableViewDataSource, U
     }
     
     @IBAction func closeTapped(_ sender: Any) {
-        _ = navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
 
 }

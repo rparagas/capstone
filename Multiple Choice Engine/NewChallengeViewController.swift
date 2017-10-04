@@ -127,6 +127,10 @@ class NewChallengeViewController: UIViewController, UIPickerViewDelegate, UIPick
         uploadChallengeSender(uuid : uuid)
     }
     
+    @IBAction func cancelTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func uploadChallangeInfo(uuid : String) {
         let newQuestions = ["question1" : selectedQuestions[0].questionID,
                             "question2" : selectedQuestions[1].questionID,

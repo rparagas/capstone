@@ -214,7 +214,7 @@ class ChallengeViewController: UIViewController {
         
         FIRDatabase.database().reference().child("studentChallenges").child(currentUser.studentID).child(challenge.challengeID).child("results").setValue(results)
     
-        FIRDatabase.database().reference().child("studentChallenges").child(currentUser.studentID).child(challenge.challengeID).child("status").setValue("completed")
+        FIRDatabase.database().reference().child("studentChallenges").child(currentUser.studentID).child(challenge.challengeID).child("status").setValue("Completed")
         
         if currentUser.studentID == challenge.challengerID {
             FIRDatabase.database().reference().child("challenges").child(challenge.challengeID).child("isChallengerComplete").setValue(true)

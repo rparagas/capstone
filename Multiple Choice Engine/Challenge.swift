@@ -22,4 +22,5 @@ class Challenge {
     var isSenderComplete = false
     var challengerScore = 0
     var senderScore = 0
+    var winner = ""
 }

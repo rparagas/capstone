@@ -104,8 +104,8 @@ class ChallengeStatusViewController: UIViewController {
     }
     
     func accepted() {
-        FIRDatabase.database().reference().child("challenges").child(challenge.challengeID).child("status").setValue("accepted")
-        FIRDatabase.database().reference().child("studentChallenges").child(currentUser.studentID).child(challenge.challengeID).child("status").setValue("accepted")
+        FIRDatabase.database().reference().child("challenges").child(challenge.challengeID).child("status").setValue("Ready")
+        FIRDatabase.database().reference().child("studentChallenges").child(currentUser.studentID).child(challenge.challengeID).child("status").setValue("Ready")
         previousVC.viewDidLoad()
         navigationController?.popToRootViewController(animated: true)
     }
@@ -125,8 +125,8 @@ class ChallengeStatusViewController: UIViewController {
     }
 
     @IBAction func declineTapped(_ sender: Any) {
-        FIRDatabase.database().reference().child("challenges").child(challenge.challengeID).child("status").setValue("declined")
-        FIRDatabase.database().reference().child("studentChallenges").child(currentUser.studentID).child(challenge.challengeID).child("status").setValue("declined")
+        FIRDatabase.database().reference().child("challenges").child(challenge.challengeID).child("status").setValue("Declined")
+        FIRDatabase.database().reference().child("studentChallenges").child(currentUser.studentID).child(challenge.challengeID).child("status").setValue("Declined")
         navigationController?.popToRootViewController(animated: true)
     }
 }

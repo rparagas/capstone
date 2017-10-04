@@ -53,8 +53,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = userChallenges[indexPath.row].topic
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableviewCell", for: indexPath) as! HomeTableViewCell
+        cell.setText(challenge: userChallenges[indexPath.row], userID: user.studentID)
         return cell
     }
     
@@ -119,7 +119,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             if challenge.isSenderComplete == true && challenge.isChallengerComplete == true {
                 if challenge.challengerScore > challenge.senderScore {
-                    //  WINNER
+                    challenge.winner = challenge.challengerID
+                } else {
+                    challenge.winner = challenge.senderID
                 }
             }
         
