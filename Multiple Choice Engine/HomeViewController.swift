@@ -29,6 +29,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         performSegue(withIdentifier: "newChallengeSegue", sender: nil)
     }
     
+    @IBAction func signoutTapped(_ sender: Any) {
+        do {
+            try FIRAuth.auth()?.signOut()
+            dismiss(animated: true, completion: nil)
+        } catch (let error) {
+            print(error)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "newChallengeSegue" {
             let nextVC = segue.destination as! NewChallengeViewController

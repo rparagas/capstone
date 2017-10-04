@@ -50,17 +50,20 @@ class ChallengeStatusViewController: UIViewController {
     }
     
     func configButtons() {
-        if challenge.status == "accepted" {
+        if challenge.status == "Ready" {
             acceptStartButton.setTitle("Start", for: .normal)
             declineButton.isHidden = true
-        } else if challenge.status == "declined" {
+        } else if challenge.status == "Declined" {
             acceptStartButton.isHidden = true
             declineButton.isHidden = true
-        } else {
+        } else if challenge.challengerID == currentUser.studentID && challenge.status == "Pending" {
             acceptStartButton.isHidden = false
             acceptStartButton.setTitle("Accept", for: .normal)
             declineButton.isHidden = false
             declineButton.setTitle("Decline", for: .normal)
+        } else {
+            acceptStartButton.isHidden = true
+            declineButton.isHidden = true
         }
     }
     

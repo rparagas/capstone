@@ -125,6 +125,7 @@ class NewChallengeViewController: UIViewController, UIPickerViewDelegate, UIPick
         uploadChallangeInfo(uuid : uuid)
         uploadChallangeChallenger(uuid: uuid)
         uploadChallengeSender(uuid : uuid)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
@@ -145,9 +146,9 @@ class NewChallengeViewController: UIViewController, UIPickerViewDelegate, UIPick
                             "senderScore" : 0,
                             "questions" : newQuestions,
                             "isSenderComplete" : false,
-                            "status" : "pending",
+                            "status" : "Pending",
                             "topic" : selectedTopic.topicName,
-                            "winner" : "nul"] as [String : Any]
+                            "winner" : "nil"] as [String : Any]
  
         FIRDatabase.database().reference().child("challenges").child(uuid).setValue(newChallenge)
     }
